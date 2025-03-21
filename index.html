@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Open Shortcut</title>
+<title>Send Data to Shortcut</title>
 </head>
 <body>
 
-<button onclick="openShortcut()">Run Posterboard</button>
+<input type="text" id="dataInput" placeholder="Set the name of the App (add .app at the end)">
+<button onclick="sendDataToShortcut()">Run</button>
 
 <script>
-function openShortcut() {
-  
-  var shortcutName = "Posterboard";
-  var url = "file:///Applications/PosterBoard.app"
+function sendDataToShortcut() {
+  var data = document.getElementById("dataInput").value;
+  var shortcutName = "RunShort"; // Replace with your shortcut name
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file///Applications/" + encodeURIComponent(data);
 
-  
   window.location.href = url;
 }
 </script>
