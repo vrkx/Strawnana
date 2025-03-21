@@ -12,7 +12,7 @@
 function sendDataToShortcut() {
   var data = document.getElementById("dataInput").value;
   var shortcutName = "RunShort"; // Replace with your shortcut name
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file///Applications/" + encodeURIComponent(data);
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/" + encodeURIComponent(data);
 
   window.location.href = url;
 }
