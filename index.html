@@ -1,21 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<style>
+
+
+
+body{
+
+background-color: black;
+
+
+}
+
+</style>
+
 <title>Send Data to Shortcut</title>
 </head>
 <body>
 
+
+<div style="text-align: center; padding: 10px;">
+
+<h1 style="color: white; font-family: Arial, Helvetica, sans-serif; text-align: center; ">Custom App</h1>
 <input type="text" id="dataInput" placeholder="Set the name of the App (add .app at the end)">
 <button onclick="sendDataToShortcut()">Run</button>
+
+</div>
+
+<h1 style="color: white; text-align: center; font-family: Arial, Helvetica, sans-serif;">Actions</h1>
+
+<div style="    text-align: center;
+display: flex
+;
+align-content: center;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+">
+
+    <button onclick="RunPosterBoard()" style="margin-bottom: 5px;">Run PosterBoard.app</button>
+    <button onclick="RunAX()"  style="margin-bottom: 5px;">Run AXRemoteViewService.app</button>
+    <button onclick="RunClarityCamera()"style="margin-bottom: 5px;">Run ClarityCamera.app</button>
+    <button onclick="RunPhotos()"style="margin-bottom: 5px;">Run ClarityPhotos.app</button>
+    <button onclick="Rundgns()"style="margin-bottom: 5px;">Run Diagnostics.app</button>
+    <button onclick="Rundgns()"style="margin-bottom: 5px;">Run Feedback.app</button>
+    <button onclick="FTMInternal()"style="margin-bottom: 5px;">Run FTMInternal-4.app</button>
+    <button onclick="Setup()"style="margin-bottom: 5px;">Run Setup.app</button>   <button onclick="Preboard()"style="margin-bottom: 5px;">Run Preboard.app</button>
+    <button onclick="Previewsh()"style="margin-bottom: 5px;">Run PreviewShell.app</button>   
+    <button onclick="Preboard()"style="margin-bottom: 5px;">Run Preboard.app</button>
+</div>
+
 
 <script>
 function sendDataToShortcut() {
   var data = document.getElementById("dataInput").value;
-  var shortcutName = "RunShort"; // Replace with your shortcut name
+  var shortcutName = "RunShort"; 
   var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/" + encodeURIComponent(data);
 
   window.location.href = url;
 }
+
+function RunPosterBoard() {
+  var data = document.getElementById("dataInput").value;
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/PosterBoard.app";
+
+  window.location.href = url;
+}
+
+function RunAX() {
+  
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/AXRemoteViewService.app";
+
+  window.location.href = url;
+}
+
+function RunClarityCamera() {
+  
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/ClarityCamera.app";
+
+  window.location.href = url;
+}
+function RunPhotos() {
+  
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/ClarityPhotos.app";
+
+  window.location.href = url;
+}
+
+function Rundgns() {
+  
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/Diagnostics.app";
+
+  window.location.href = url;
+}
+function Feedback() {
+  
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/Feedback.app";
+
+  window.location.href = url;
+}
+function FTMInternal() {
+  
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/FTMInternal-4.app";
+
+  window.location.href = url;
+}
+
+function Setup() {
+  
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/Setup.app";
+
+  window.location.href = url;
+}function Preboard() {
+  
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/Preboard.app";
+
+  window.location.href = url;
+}function Previewsh() {
+  
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/PreviewShell.app";
+
+  window.location.href = url;
+}function Spotlight() {
+  
+  var shortcutName = "RunShort"; 
+  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/Spotlight.app";
+
+  window.location.href = url;
+}
+
+
+
+
+
+
 </script>
 
 </body>
