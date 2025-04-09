@@ -8,27 +8,43 @@
 
 body{
 
-background-color: black;
+background-color: #101010;
 
 
 }
 
+button {
+
+background-color: #151515;
+color: white;
+width: 100px;
+box-shadow: none;
+border: #202020 solid 1.5px;
+border-radius: 5px;
+font-family: Arial, Helvetica, sans-serif;
+height: 25px;
+
+
+
+}
+
+
 </style>
 
-<title>Send Data to Shortcut</title>
+<title>Strawnana</title>
 </head>
 <body>
 
 
 <div style="text-align: center; padding: 10px;">
-
-<h1 style="color: white; font-family: Arial, Helvetica, sans-serif; text-align: center; ">Custom App</h1>
+  <h1 style="color: white; font-family: Arial, Helvetica, sans-serif; text-align: center; ">Strawnana</h1>
+<h2 style="color: white; font-family: Arial, Helvetica, sans-serif; text-align: center; ">Custom App</h2>
 <input type="text" id="dataInput" placeholder="Set the name of the App (add .app at the end)">
 <button onclick="sendDataToShortcut()">Run</button>
 
 </div>
 
-<h1 style="color: white; text-align: center; font-family: Arial, Helvetica, sans-serif;">Actions</h1>
+<h1 style="color: white; text-align: center; font-family: Arial, Helvetica, sans-serif;">Hidden Apps</h1>
 
 <div style="    text-align: center;
 display: flex
@@ -40,23 +56,65 @@ justify-content: center;
 align-items: center;
 ">
 
-    <button onclick="RunPosterBoard()" style="margin-bottom: 5px;">Run PosterBoard.app</button>
-    <button onclick="RunAX()"  style="margin-bottom: 5px;">Run AXRemoteViewService.app</button>
-    <button onclick="RunClarityCamera()"style="margin-bottom: 5px;">Run ClarityCamera.app</button>
-    <button onclick="RunPhotos()"style="margin-bottom: 5px;">Run ClarityPhotos.app</button>
-    <button onclick="Rundgns()"style="margin-bottom: 5px;">Run Diagnostics.app</button>
-    <button onclick="Rundgns()"style="margin-bottom: 5px;">Run Feedback.app</button>
-    <button onclick="FTMInternal()"style="margin-bottom: 5px;">Run FTMInternal-4.app</button>
-    <button onclick="Setup()"style="margin-bottom: 5px;">Run Setup.app</button>   <button onclick="Preboard()"style="margin-bottom: 5px;">Run Preboard.app</button>
-    <button onclick="Previewsh()"style="margin-bottom: 5px;">Run PreviewShell.app</button>   
-    <button onclick="Preboard()"style="margin-bottom: 5px;">Run Preboard.app</button>
+    <div style="background-color: #151515 ; margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+
+      <h1>PosterBoard.app</h1>
+      <button onclick="RunPosterBoard()" style="margin-bottom: 5px;">Run</button>
+    </div>
+    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 8px; padding: 5px;">
+
+      <h1>AXRemoteViewService.app</h1>
+      <button onclick="RunAX()"  style="margin-bottom: 5px;">Run</button>
+    </div>
+    <div style="background-color: #151515 ;margin-top: 10px;width: 220px;  border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+
+      <h1>ClarityCamera.app</h1>
+      <button onclick="RunClarityCamera()"style="margin-bottom: 5px;">Run</button>
+    </div>
+    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+
+      <h1>ClarityPhotos.app</h1>
+      <button onclick="RunPhotos()"style="margin-bottom: 5px;">Run</button>
+    </div>
+    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+
+      <h1>Diagnostics.app</h1>
+      <button onclick="Rundgns()"style="margin-bottom: 5px;">Run</button>
+    </div>
+    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+
+      <h1>Feedback.app</h1>
+      <button onclick="Feedback()"style="margin-bottom: 5px;">Run</button>
+    </div>
+    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+
+      <h1>FTMInternal-4.app</h1>
+      <button onclick="FTMInternal()"style="margin-bottom: 5px;">Run</button>
+    </div>
+    <div style="background-color: #151515 ; margin-top: 10px;width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+
+      <h1>Setup.app</h1>
+      <button onclick="Setup()"style="margin-bottom: 5px;">Run</button>
+    </div>
+    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+
+      <h1>PreviewShell.app</h1>
+      <button onclick="Previewsh()"style="margin-bottom: 5px;">Run</button>
+    </div>
+    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+
+      <h1>Preboard.app</h1>
+      <button onclick="Preboard()"style="margin-bottom: 5px;">Run</button>
+    </div>
+  
+
 </div>
 
 
 <script>
 function sendDataToShortcut() {
   var data = document.getElementById("dataInput").value;
-  var shortcutName = "RunShort"; 
+  var shortcutName = "Strawnana"; 
   var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/" + encodeURIComponent(data);
 
   window.location.href = url;
