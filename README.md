@@ -10,6 +10,6 @@
 # Requirements
 
 - iOS 13-18
-- [RunShort](http://icloud.com/shortcuts/64ed8d055c974221aab9410d99550016)
+- [Strawnana Shortcut](https://www.icloud.com/shortcuts/184b5a15788044e2a57c6da36545f143)
 - iFon 
 
