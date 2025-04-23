@@ -3,7 +3,7 @@
 </h3>
 
 # Showcase
-<img  src="https://github.com/user-attachments/assets/4154c7b0-ea30-450d-bbda-8982abf180d9" width="180" height="350" />
+<img  src="https://github.com/user-attachments/assets/4154c7b0-ea30-450d-bbda-8982abf180d9" width="170" height="350" />
 
 # Requirements
 
