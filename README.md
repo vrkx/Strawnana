@@ -12,3 +12,14 @@
 - [Strawnana Shortcut](https://www.icloud.com/shortcuts/184b5a15788044e2a57c6da36545f143)
 
 
+# Hidden Apps 
+
+#### (There are that more will be added)
+
+|Apps| 	  
+| ------------------------------ |
+|Diagnostics.app|
+|PosterBoard.app|
+|Feedback.app|
+|Setup.app|
+|Preboard.app|
