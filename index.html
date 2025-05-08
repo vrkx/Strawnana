@@ -1,210 +1,200 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <style>
+body {
+  background-color: #101010;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.container {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
+h1, h2 {
+  text-align: center;
+}
 
-body{
-
-background-color: #101010;
-
-
+input[type="text"] {
+  background-color: #151515;
+  color: white;
+  border: #202020 solid 1.5px;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 250px;
 }
 
 button {
-
-background-color: #151515;
-color: white;
-width: 100px;
-box-shadow: none;
-border: #202020 solid 1.5px;
-border-radius: 5px;
-font-family: Arial, Helvetica, sans-serif;
-height: 25px;
-
-
-
+  background-color: #151515;
+  color: white;
+  width: 150px;
+  box-shadow: none;
+  border: #202020 solid 1.5px;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
 }
 
+button:hover {
+  background-color: #252525;
+}
 
+.app-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.app-item {
+  background-color: #151515;
+  border-radius: 5px;
+  border: #202020 solid 1.5px;
+  padding: 15px;
+  width: 280px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-item h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
 </style>
-
 <title>Strawnana</title>
 </head>
+
+<img src="/img/Strawnana.png" style="height: 180px;" alt="">
+
 <body>
 
+  <div class="container">
+  
+    <input type="text" id="dataInput" placeholder="Enter App Name.app">
+    <button onclick="runCustomApp()">Run Hidden App</button>
+  </div>
 
-<div style="text-align: center; padding: 10px;">
-  <h1 style="color: white; font-family: Arial, Helvetica, sans-serif; text-align: center; ">Strawnana</h1>
-<h2 style="color: white; font-family: Arial, Helvetica, sans-serif; text-align: center; ">Custom App</h2>
-<input type="text" id="dataInput" placeholder="Set the name of the App (add .app at the end)">
-<button onclick="sendDataToShortcut()">Run</button>
+  <h1>Hidden Apps</h1>
 
-</div>
-
-<h1 style="color: white; text-align: center; font-family: Arial, Helvetica, sans-serif;">Hidden Apps</h1>
-
-<div style="    text-align: center;
-display: flex
-;
-align-content: center;
-flex-wrap: wrap;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-">
-
-    <div style="background-color: #151515 ; margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
-
-      <h1>PosterBoard.app</h1>
-      <button onclick="RunPosterBoard()" style="margin-bottom: 5px;">Run</button>
+  <div class="app-grid" id="hiddenAppsContainer">
     </div>
-    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 8px; padding: 5px;">
 
-      <h1>AXRemoteViewService.app</h1>
-      <button onclick="RunAX()"  style="margin-bottom: 5px;">Run</button>
-    </div>
-    <div style="background-color: #151515 ;margin-top: 10px;width: 220px;  border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+    <footer style="margin : 20px;">
 
-      <h1>ClarityCamera.app</h1>
-      <button onclick="RunClarityCamera()"style="margin-bottom: 5px;">Run</button>
-    </div>
-    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+      Looking for more apps? Check <a href="https://github.com/vrkx/Strawnana/blob/main/Apps.md" style="color: rgb(52, 52, 255); text-decoration: none;">here</a>
 
-      <h1>ClarityPhotos.app</h1>
-      <button onclick="RunPhotos()"style="margin-bottom: 5px;">Run</button>
-    </div>
-    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+    </footer>
+  <script>
+    const appData = {
+      "customApp": {
+        "shortcutName": "Strawnana",
+        "inputPath": "file:///Applications/",
+        "inputField": "dataInput"
+      },
+      "hiddenApps": [
+        {
+          "name": "PosterBoard.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/PosterBoard.app"
+        },
+        {
+          "name": "AXRemoteViewService.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/AXRemoteViewService.app"
+        },
+        {
+          "name": "ClarityCamera.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/ClarityCamera.app"
+        },
+        {
+          "name": "ClarityPhotos.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/ClarityPhotos.app"
+        },
+        {
+          "name": "Diagnostics.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/Diagnostics.app"
+        },
+        {
+          "name": "Feedback.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/Feedback.app"
+        },
+        {
+          "name": "FTMInternal-4.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/FTMInternal-4.app"
+        },
+        {
+          "name": "Setup.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/Setup.app"
+        },
+        {
+          "name": "PreviewShell.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/PreviewShell.app"
+        },
+        {
+          "name": "Preboard.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/Preboard.app"
+        },
+        {
+          "name": "Spotlight.app",
+          "shortcutName": "RunShort",
+          "inputPath": "file:///Applications/Spotlight.app"
+        }
+      ]
+    };
 
-      <h1>Diagnostics.app</h1>
-      <button onclick="Rundgns()"style="margin-bottom: 5px;">Run</button>
-    </div>
-    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
+    function runShortcut(shortcutName, inputPath) {
+      const url = `shortcuts://run-shortcut?name=${encodeURIComponent(shortcutName)}&input=${encodeURIComponent(inputPath)}`;
+      window.location.href = url;
+    }
 
-      <h1>Feedback.app</h1>
-      <button onclick="Feedback()"style="margin-bottom: 5px;">Run</button>
-    </div>
-    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
-
-      <h1>FTMInternal-4.app</h1>
-      <button onclick="FTMInternal()"style="margin-bottom: 5px;">Run</button>
-    </div>
-    <div style="background-color: #151515 ; margin-top: 10px;width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
-
-      <h1>Setup.app</h1>
-      <button onclick="Setup()"style="margin-bottom: 5px;">Run</button>
-    </div>
-    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
-
-      <h1>PreviewShell.app</h1>
-      <button onclick="Previewsh()"style="margin-bottom: 5px;">Run</button>
-    </div>
-    <div style="background-color: #151515 ;margin-top: 10px; width: 220px; border-radius: 5px; border: #202020 solid 1.5px; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 10px; padding: 5px;">
-
-      <h1>Preboard.app</h1>
-      <button onclick="Preboard()"style="margin-bottom: 5px;">Run</button>
-    </div>
-  
-
-</div>
-
-
-<script>
-function sendDataToShortcut() {
-  var data = document.getElementById("dataInput").value;
-  var shortcutName = "Strawnana"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/" + encodeURIComponent(data);
-
-  window.location.href = url;
-}
-
-function RunPosterBoard() {
-  var data = document.getElementById("dataInput").value;
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/PosterBoard.app";
-
-  window.location.href = url;
-}
-
-function RunAX() {
-  
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/AXRemoteViewService.app";
-
-  window.location.href = url;
-}
-
-function RunClarityCamera() {
-  
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/ClarityCamera.app";
-
-  window.location.href = url;
-}
-function RunPhotos() {
-  
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/ClarityPhotos.app";
-
-  window.location.href = url;
-}
-
-function Rundgns() {
-  
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/Diagnostics.app";
-
-  window.location.href = url;
-}
-function Feedback() {
-  
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/Feedback.app";
-
-  window.location.href = url;
-}
-function FTMInternal() {
-  
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/FTMInternal-4.app";
-
-  window.location.href = url;
-}
-
-function Setup() {
-  
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/Setup.app";
-
-  window.location.href = url;
-}function Preboard() {
-  
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/Preboard.app";
-
-  window.location.href = url;
-}function Previewsh() {
-  
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/PreviewShell.app";
-
-  window.location.href = url;
-}function Spotlight() {
-  
-  var shortcutName = "RunShort"; 
-  var url = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName) + "&input=file:///Applications/Spotlight.app";
-
-  window.location.href = url;
-}
+    function runCustomApp() {
+      const appName = document.getElementById(appData.customApp.inputField).value;
+      const fullPath = appData.customApp.inputPath + appName;
+      runShortcut(appData.customApp.shortcutName, fullPath);
+    }
 
 
+    function generateAppButtons() {
+      const container = document.getElementById("hiddenAppsContainer");
+      appData.hiddenApps.forEach(app => {
+        const appDiv = document.createElement("div");
+        appDiv.classList.add("app-item");
 
+        const heading = document.createElement("h2");
+        heading.textContent = app.name;
+        appDiv.appendChild(heading);
 
+        const button = document.createElement("button");
+        button.textContent = "Run " + app.name;
+        button.onclick = () => runShortcut(app.shortcutName, app.inputPath);
+        appDiv.appendChild(button);
 
+        container.appendChild(appDiv);
+      });
+    }
 
-</script>
+    generateAppButtons();
+  </script>
 
 </body>
 </html>
