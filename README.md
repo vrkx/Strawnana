@@ -13,7 +13,7 @@
 # Setup
 
 1. Download the [Strawnana Shortcut](https://www.icloud.com/shortcuts/184b5a15788044e2a57c6da36545f143)
-2. Go to https://vrkx.github.io/Strawnana/app and save it to home screen.
+2. Go to https://vrkx.github.io/Strawnana/app 
 3. The app is ready, to check for more apps click [Here](https://github.com/vrkx/Strawnana/blob/main/Apps.md)
 
 
