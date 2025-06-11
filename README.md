@@ -1,9 +1,8 @@
-<h1 align="center">Strawnana</h1>
-<h3 align="center"> Strawnana is a Website made in html and js to open hidden apps built in the iOS Software.
-</h3>
+![image](https://github.com/user-attachments/assets/22e069b9-37d2-4925-ac44-8a85cac294cb)
 
-# Showcase
-<img  src="https://github.com/user-attachments/assets/4154c7b0-ea30-450d-bbda-8982abf180d9" width="170" height="350" />
+
+<h3 align="center"> Strawnana is a open-source application made in html, css and js , made to run hidden apps built in the iOS Software that won't appear on the search bar.
+</h3>
 
 # Requirements
 
@@ -11,15 +10,10 @@
 - Shortcuts App
 - [Strawnana Shortcut](https://www.icloud.com/shortcuts/184b5a15788044e2a57c6da36545f143)
 
+# Setup
 
-# Hidden Apps 
+1. Download the [Strawnana Shortcut](https://www.icloud.com/shortcuts/184b5a15788044e2a57c6da36545f143)
+2. Go to https://vrkx.github.io/Strawnana/app 
+3. The app is ready, to check for more apps click [Here](https://github.com/vrkx/Strawnana/blob/main/Apps.md)
 
-#### (There are that more will be added)
 
-|Apps| 	  
-| ------------------------------ |
-|Diagnostics.app|
-|PosterBoard.app|
-|Feedback.app|
-|Setup.app|
-|Preboard.app|
